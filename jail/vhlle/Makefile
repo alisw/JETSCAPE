@@ -5,9 +5,9 @@ ROOTLIBS     := $(shell root-config --libs)
 EXTRA_FLAGS   = -D TABLE  # Laine EoS, tabulated
 
 CXX           = g++
-CXXFLAGS      = -Wall -fPIC -O3 -march=native
+CXXFLAGS      = -Wall -fPIC -O3
 LD            = g++
-LDFLAGS       = -O3 -march=native
+LDFLAGS       = -O3
 
 CXXFLAGS     += $(ROOTCFLAGS) $(EXTRA_FLAGS)
 LIBS          = $(ROOTLIBS) $(SYSLIBS)
@@ -18,7 +18,7 @@ objdir     = obj
 SRC        = cll.cpp eos.cpp trancoeff.cpp fld.cpp hdo.cpp s95p.cpp ic.cpp \
              icGlauber.cpp icGubser.cpp main.cpp rmn.cpp
 OBJS       = $(patsubst %.cpp,$(objdir)/%.o,$(SRC)) 
-              
+
 TARGET	   = hlle_visc
 #------------------------------------------------------------------------------
 $(TARGET):       $(OBJS)
@@ -31,6 +31,6 @@ $(OBJS): | $(objdir)
 
 $(objdir):
 	@mkdir -p $(objdir)
-	
+
 obj/%.o : %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
