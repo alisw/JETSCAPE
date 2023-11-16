@@ -16,12 +16,12 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O -fPIC -pipe -Wall -g -Wno-unused-vari
 
 if(LINUX) 
     message( STATUS "Linux : " ${CMAKE_HOST_SYSTEM})
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 endif()
 
 if (APPLE)
      message( STATUS "Apple : " ${CMAKE_HOST_SYSTEM})
-     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-macro-redefined -std=c++11 -stdlib=libc++")
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-macro-redefined -std=c++17 -stdlib=libc++")
      message(STATUS "CXX_FLAGS = " ${CMAKE_CXX_FLAGS})	
      message(STATUS "LD_FLAGS = " ${CMAKE_EXE_LINKER_FLAGS})
 endif()   

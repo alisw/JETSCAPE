@@ -24,7 +24,7 @@ def main():
             os.path.getmtime(cxxname) > os.path.getmtime(basename)):
         print('compiling C++ Woods-Saxon generator')
         subprocess.check_call(
-            ['g++', '-std=c++11', '-Wall', '-Wextra', '-O3',
+            ['g++', '-std=c++17', '-Wall', '-Wextra', '-O3',
              cxxname, '-o'+basename])
 
     R = 6.5
