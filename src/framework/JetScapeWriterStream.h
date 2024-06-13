@@ -34,9 +34,9 @@ namespace Jetscape {
 template <class T> class JetScapeWriterStream : public JetScapeWriter {
 
 public:
-  JetScapeWriterStream<T>(){};
-  JetScapeWriterStream<T>(string m_file_name_out);
-  virtual ~JetScapeWriterStream<T>();
+  JetScapeWriterStream(){};
+  JetScapeWriterStream(string m_file_name_out);
+  virtual ~JetScapeWriterStream();
 
   void Init();
   void Exec();
