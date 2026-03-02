@@ -1,11 +1,10 @@
 
-cmake_minimum_required(VERSION 3.4)
+cmake_minimum_required(VERSION 3.16)
 project(trento VERSION 1.5.1 LANGUAGES CXX)
 
 
 
 # require C++11
-set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -31,7 +30,7 @@ endif()
 
 
 # Find and use Boost.
-find_package(Boost 1.60 REQUIRED COMPONENTS filesystem program_options system)
+find_package(Boost 1.60 REQUIRED COMPONENTS filesystem program_options)
 include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
 message(STATUS "${Boost_INCLUDE_DIRS}, ${Boost_LIBRARIES}")
 # Find and use GSL.

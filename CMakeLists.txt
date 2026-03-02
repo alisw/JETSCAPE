@@ -2,7 +2,7 @@
 ### Initial Cmake Setup ###
 ###########################
 
-cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 project (JetScape CXX C)
 
 # Fail if cmake is called in the source directory
@@ -227,7 +227,7 @@ install(
 
 # Find and use Boost.
 message("Looking for Boost ...")
-find_package(Boost 1.50 REQUIRED COMPONENTS filesystem program_options system)
+find_package(Boost 1.50 REQUIRED COMPONENTS filesystem program_options)
 Message(STATUS "Boost Include dirs : " ${Boost_INCLUDE_DIRS})
 ## boost needs special treatment. For reasons.
 include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
